@@ -27,6 +27,9 @@ class Note extends Component {
     }
 
     remove(){
+        console.log(this.props)
+        console.log(this.props.index)
+        this.props.onRemove(this.props.index)
 
     }
 

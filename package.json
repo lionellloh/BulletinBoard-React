@@ -5,7 +5,9 @@
   "dependencies": {
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "react-scripts": "2.1.2"
+    "react-icons": "^3.2.2",
+    "react-scripts": "2.1.2",
+    "webpack": "^4.28.3"
   },
   "scripts": {
     "start": "react-scripts start",

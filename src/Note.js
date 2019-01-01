@@ -6,19 +6,46 @@ class Note extends Component {
 
     constructor(props){
         super(props)
+        this.state = {
+            editing:false
+        }
         this.edit = this.edit.bind(this)
         this.remove = this.remove.bind(this)
+        this.save = this.save.bind(this)
+        this.renderDisplay = this.renderDisplay.bind(this)
+        this.renderForm = this.renderForm.bind(this)
     }
 
     edit(){
-        alert('editing note')
+
+        this.setState({
+            editing:true
+        })
+
+        this.render()
     }
 
     remove(){
-        alert('removing note')
+
     }
 
-    render(){
+    renderForm(){
+        return (
+            <div className="note">
+
+                <form>
+                    <textarea ref = {input => this._newText = input} />
+                    <button onClick={ this.save}> Save </button>
+                </form>
+            </div>
+        )
+    }
+
+    save(){
+        alert(this._newText.value)
+    }
+
+    renderDisplay(){
         return (
 
             <div className = "note">
@@ -35,6 +62,9 @@ class Note extends Component {
 
                 )
         }
+    render(){
+        return this.state.editing ? this.renderForm() : this.renderDisplay()
+    }
     }
 
     export default Note
